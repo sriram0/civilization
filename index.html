@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Civilization</title>
+        <style>
+            th,td{
+                padding: 10px;
+                border: 2px groove red;
+                background-color: lightgreen;
+            }
+            button{
+                background-color: blue;
+                color: lightgreen;
+            }
+            body{
+                background-color: lightgreen;
+            }
+            h1,h2,h3, th{
+                color: rgb(0, 0, 176);
+            }
+            td, .help{
+                color:rgb(179, 116, 0);
+            }
+            span{
+                color: blue;
+            }
+            .help{
+                background-color: dodgerblue;
+                /*
+                position:absolute;
+                top:10px;
+                left: 70%;
+                */
+                padding:10px;
+                margin:20px;
+                float:right;
+                max-width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Basic</h1>
+        <h3>XP: <span id="exp">0/50</span></h3>
+        <h2>Resources</h2>
+        <div class="help">
+            <h3>Hints</h3>
+            <ul>
+                <li>The amount of wood you get increases with every logger</li>
+                <li>The amount of stone and ore you get increases with every miner</li>
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>Get More!</th>
+            </tr>
+            <tr>
+                <td>Wood: <span id="wood">0</span></td>
+                <td><button onclick="gather('log')">Go Logging</button></td>
+            </tr>
+            <tr>
+                <td>Stone: <span id="stone">0</span></td>
+                <td><button onclick="gather('mine')">Go Mining</button></td>
+            </tr>
+            <tr>
+                <td>Ore: <span id="ore">0</span></td>
+                <td><button onclick="gather('mine')">Go Mining</button></td>
+            </tr>
+        </table>
+        <h2>Buildings</h2>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>Cost</th>
+                <th>Get More!</th>
+            </tr>
+            <tr>
+                <td>Logger: <span id="logger">1</span></td>
+                <td>12 wood</span</td>
+                <td><button onclick="build('log')">Build Logger</button></td>
+            </tr>
+            <tr>
+                <td>Minner: <span id="miner">1</span></td>
+                <td>8 wood and 6 stone</span</td>
+                <td><button onclick="build('mine')">Build Minner</button></td>
+            </tr>
+        </table>
+        
+        <div id="up">
+            <div id="l1">
+                <h1>Level 1</h1>
+                <h2>Resources</h2>
+                <div class="help">
+                    <h3>Hints</h3>
+                    <ul>
+                        <li>The amount of clay you get also increases with every miner</li>
+                        <li>Furnaces allow you to turn clay into brick and ore into ingots and the more furnaces you have, the faster the conversion</li>
+                    </ul>
+                </div>
+                <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Get More!</th>
+                    </tr>
+                    <tr>
+                        <td>Clay: <span id="clay">0</span></td>
+                        <td><button onclick="gather('mine')">Go Mining</button></td>
+                    </tr>
+                    <tr>
+                        <td>Brick: <span id="brick">0</span></td>
+                        <td><button onclick="gather('smeltc')">Smelt Clay</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ingots: <span id="ingot">0</span></td>
+                        <td><button onclick="gather('smelto')">Smelt Ore</button></td>
+                    </tr>
+                </table>
+                <h2>Buildings</h2>
+                <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Cost</th>
+                        <th>Get More!</th>
+                    </tr>
+                    <tr>
+                        <td>Furnace: <span id="furnace">0</span></td>
+                        <td>2 wood 14 stone</span</td>
+                        <td><button onclick="build('smelt')">Build Furnace</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="l2">
+                <h1>Level 2</h1>
+                <div class="help">
+                    <h3>Hints</h3>
+                    <ul>
+                        <li>The amount of food you get increases with every farm</li>
+                        <li>You need food to make people and the maximum amount of people is limited by the amount of houses</li>
+                    </ul>
+                </div>
+                <h2>Resources</h2>
+                <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Get More!</th>
+                    </tr>
+                    <tr>
+                        <td>Food: <span id="food">0</span></td>
+                        <td><button onclick="gather('food')">Go Farming</button></td>
+                    </tr>
+                    <tr>
+                        <td>People: <span id="people">0</span></td>
+                        <td><button onclick="gather('people')">Birth People</button></td>
+                    </tr>
+                </table>
+                <h2>Buildings</h2>
+                <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Cost</th>
+                        <th>Get More!</th>
+                    </tr>
+                    <tr>
+                        <td>Farm: <span id="farm">0</span></td>
+                        <td>10 wood 12 brick</span</td>
+                        <td><button onclick="build('farm')">Build Farm</button></td>
+                    </tr>
+                    <tr>
+                        <td>House: <span id="house">0</span></td>
+                        <td>5 stone 7 brick</span</td>
+                        <td><button onclick="build('house')">Build House</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</html>
